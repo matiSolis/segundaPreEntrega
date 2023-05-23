@@ -114,3 +114,55 @@ Fecha: 17/5/2023 - Hora: 21:24:01 - Metodo: GET CARTS
 Fecha: 17/5/2023 - Hora: 21:28:54 - Metodo: GET PRODUCTS
 Fecha: 17/5/2023 - Hora: 21:29:04 - Metodo: GET CARTS
 Fecha: 17/5/2023 - Hora: 22:51:31 - Metodo: ADD PRODUCTS TO CART
+Fecha: 20/5/2023 - Hora: 17:35:24 - Metodo: ADD PRODUCTS TO CART
+Fecha: 20/5/2023 - Hora: 17:37:51 - Metodo: ADD PRODUCTS TO CART
+Fecha: 20/5/2023 - Hora: 17:38:42 - Metodo: ADD PRODUCTS TO CART
+Fecha: 20/5/2023 - Hora: 17:41:30 - Metodo: ADD PRODUCTS TO CART
+Fecha: 20/5/2023 - Hora: 17:42:20 - Metodo: ADD PRODUCTS TO CART
+Fecha: 21/5/2023 - Hora: 19:16:14 - Metodo: ADMIN LOGIN
+Fecha: 22/5/2023 - Hora: 18:49:44 - Metodo: ADMIN LOGIN
+Fecha: 22/5/2023 - Hora: 23:43:59 - Metodo: USER CREATED
+Fecha: 22/5/2023 - Hora: 23:44:07 - Metodo: USER LOGIN
+Fecha: 22/5/2023 - Hora: 23:48:20 - Metodo: USER LOGIN
+Fecha: 22/5/2023 - Hora: 23:59:24 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:00:41 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:01:17 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:01:48 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:02:32 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:02:57 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:03:26 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:03:40 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:04:36 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:07:33 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:08:29 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:09:52 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:10:27 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:11:40 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:13:27 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:13:33 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:16:19 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:17:17 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:24:40 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:26:17 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:26:24 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:26:44 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:27:06 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:27:16 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:27:27 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:28:00 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:28:38 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:28:46 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:29:01 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:29:14 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:29:28 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:37:15 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:41:40 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 00:42:10 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 18:28:03 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 18:34:53 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:11:48 - Metodo: USER CREATED
+Fecha: 23/5/2023 - Hora: 20:12:19 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:18:57 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:23:21 - Metodo: ADMIN LOGIN
+Fecha: 23/5/2023 - Hora: 20:23:55 - Metodo: ADMIN LOGIN
+Fecha: 23/5/2023 - Hora: 20:26:04 - Metodo: ADMIN LOGIN

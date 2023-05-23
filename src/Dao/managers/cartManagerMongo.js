@@ -41,16 +41,15 @@ export default class CartManagerMongo {
             throw new Error("El producto no se encontró en el carrito");
         };
     };
-    //Esta funcion no me anda, no la puedo resolver
     async addProductsToCart (idCart, products) {
         const cart = await cartModel.findById(idCart);
         for (const product of products) {
-            const alreadyInCart = await cartModel.findOne({products: {$elemMatch: {product: product._id}}});
+            const alreadyInCart = cart.products.find(item => item.product.toString() === product.product);
             if (alreadyInCart) {
                 alreadyInCart.quantity = product.quantity;
             } else {
                 cart.products.push({
-                    product: product._id,
+                    product: product.product,
                     quantity: product.quantity,
                 });
             };

@@ -4,7 +4,7 @@ import productModel from "../models/products.model.js";
 export default class viewsManagerMongo{
     static async homeRender(req, res) {
         const { page = 1, limit, query } = req.query;
-        const opt = { page, limit: parseInt(limit) || 20, lean: true };
+        const opt = { page, limit: parseInt(limit) || 6, lean: true };
         opt.sort = { price: -1 };
         const filter = {};
         if (query) {
@@ -18,6 +18,7 @@ export default class viewsManagerMongo{
         const { docs } = await productModel.paginate(filter, opt);
         const products = docs;
         res.render('home', {
+            user: req.session.user,
             title: "EL EMPORIO DEL JARDIN",
             products
         });
@@ -32,7 +33,7 @@ export default class viewsManagerMongo{
             const total = cart.products.reduce((acc, product) => {
                 return acc + product.product.price * product.quantity;
             }, 0);
-            res.render("cart", { title: "Carrito", cart, total });
+            res.render("cart", {user: req.session.user, title: "Carrito", cart, total });
         } catch (error) {
             res.status(500).send({
                 status: "Error",
@@ -47,7 +48,7 @@ export default class viewsManagerMongo{
             if (!product) {
                 return res.status(204).end();
             };
-            res.render('product', { product });
+            res.render('product', { user: req.session.user, product });
         } catch (error) {
             console.error(error);
             res.status(500).send({
@@ -92,7 +93,8 @@ export default class viewsManagerMongo{
             prevPage,
             query,
             message,
-            urlParams
+            urlParams,
+            user: req.session.user
             });
         } catch (error) {
             res.status(500).send({

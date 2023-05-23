@@ -1,4 +1,6 @@
 import express from "express";
+import session from "express-session";
+import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 import mongoose from "mongoose";
@@ -6,8 +8,11 @@ import __dirname from "./utils.js";
 import cartRouter from "./routes/cart.router.js";
 import chatRouter from "./routes/chat.router.js";
 import productRouter from "./routes/product.router.js";
+import sessionRouter from "./routes/session.router.js";
 import viewsRouter  from "./routes/views.router.js";
 import messagesModel from "./Dao/models/message.model.js";
+import Swal from "sweetalert2";
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -23,10 +28,20 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname+'/public'));
 // app.use('/realTimeProducts',viewsRouter);
+app.use(session({
+    store: new MongoStore({
+        mongoUrl: MONGO,
+        ttl:3600
+    }),
+    secret: 'CoderSecret',
+    resave: false,
+    saveUninitialized: false
+}));
 app.use('/',viewsRouter);
 app.use('/api/chat', chatRouter);
 app.use('/api/products/', productRouter);
 app.use('/api/carts/', cartRouter);
+app.use('/api/session', sessionRouter);
 
 const io = new Server(server);
 const newMessage = new messagesModel();
