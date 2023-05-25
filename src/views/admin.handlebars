@@ -1,7 +1,7 @@
 <div>
-        <nav class="navbar navbar-expand-lg bg-body-$green-900" style="width: 200%;">
+        <nav class="navbar navbar-expand-lg bg-body-$green-900" style="width: 100%;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">EL EMPORIO DEL JARDIN / BASE DE DATOS </a>
+            <a class="navbar-brand">EL EMPORIO DEL JARDIN / BASE DE DATOS </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -18,6 +18,8 @@
                 </li>
                 <li>
                     <p>{{user.role}}</p>
+                </li>
+                <li>
                     <a href="/api/session/logout"><button>Salir</button></a>
                 </li>
             </ul>
@@ -28,23 +30,11 @@
             </div>
         </div>
     </nav>
-    <button>AGREGAR PRODUCTO</button>
     {{#if message}}
         <div class="alert alert-warning">{{message}}</div>
     {{/if}}
-    <div class="gallery">
-        {{#each products}}
-            <div class="product">
-                <h2>{{this.title}}</h2>
-                <img src="{{this.thumbnail}}" alt="{{this.title}}">
-                <p>{{this.description}}</p>
-                <p>Category: {{this.category}}</p>
-                <p>Price: {{this.price}}</p>
-                <p>Stock: {{this.stock}}</p>
-                <button>EDITAR PRODUCTO</button>
-                <button>ELIMINAR PRODUCTO</button>
-            </div>
-        {{/each}}
+    <div>
+    <button>AGREGAR PRODUCTO</button>
     </div>
     <div>
         {{#if prevPage}}

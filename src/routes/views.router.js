@@ -15,13 +15,13 @@ const privateAcces = (req,res,next)=>{
 }
 
 const adminSession = (req, res, next) => {
-    if(!req.session.user || req.session.user.role !== 'admin'){
+    if(!req.session.user || req.session.user.role !== 'Admin'){
         return res.redirect('/login');
     }
     next();
 };
 
-router.get('/admin', adminSession, async (req, res) => {
+router.get('/', adminSession, async (req, res) => {
     // await ViewsManagerMongo.productRender(req, res);
     res.render('admin', { user: req.session.user});
 });
