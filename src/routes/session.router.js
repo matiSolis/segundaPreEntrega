@@ -26,27 +26,30 @@ router.post('/register', async (req, res) => {
 });
 router.post('/login', async (req, res) => {
     try{
-        const admin = {name:"admin", email:"adminCoder@coder.com", password:"adminCod3r123"};
+        let user;
         const {email, password} = req.body;
-        if(email === admin.email && password === admin.password){
+        if(email === 'adminCoder@coder.com' && password === 'adminCod3r123'){
+            user = {
+                firstName: 'Coder',
+                lastName: 'House',
+                email: email,
+                age: 18,
+                role: 'Admin'
+            };
             await managerAccess.createRecord('ADMIN LOGIN'); 
-            req.session.admin={
-                name: admin.name,
-                email: admin.email,
-            };
-            res.status(200).send({status:"succes", payload:req.res.admin, message:"Logueo exitoso como administrador."});
         }else{
-            const user = await userModel.findOne({email, password});
-            if(!user){ return res.status(404).send({status:"error", error:"Datos incorrectos."});}
-            req.session.user={
-                name: `${user.firstName} ${user.lastName}`,
-                age: user.age,
-                email: user.email
-            };
-            await userSessionMongo.showAlert(user);
+            user = await userModel.findOne({email, password});
             await managerAccess.createRecord('USER LOGIN'); 
-            res.status(200).send({status:"succes", payload:req.res.user, message:"Logueo de usuario exitoso."});
         }
+        if(!user){ return res.status(404).send({status:"error", error:"Datos incorrectos."});}
+        const role = user.role === 'Admin' ? 'Admin' : 'Usuario';
+        req.session.user={
+            name: `${user.firstName} ${user.lastName}`,
+            age: user.age,
+            email: user.email,
+            role: role
+        };
+        res.status(200).send({status:"succes", payload:req.res.user, message:"Logueo de usuario exitoso."});
     }catch (err){
         res.status(500).send({ error: 'Error interno del servidor.'});
     };

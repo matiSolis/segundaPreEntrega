@@ -1,5 +1,5 @@
 <div>
-        <nav class="navbar navbar-expand-xxl bg-body-$green-900" style="width: 200%;">
+        <nav class="navbar navbar-expand-lg bg-body-$green-900" style="width: 200%;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">EL EMPORIO DEL JARDIN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
                             <p class="dropdown-item">NOMBRE:  {{user.name}}</p>
                             <p class="dropdown-item">EMAIL:  {{user.email}}</p>
                             <p class="dropdown-item">EDAD:  {{user.age}} </p>
-                            <p class="dropdown-item">tipo de usuario: {{user.credential}}</p>
+                            <p class="dropdown-item">tipo de usuario: {{user.role}}</p>
                             <li><hr class="dropdown-divider"></li>
                             <a href="/api/session/logout"><button>Salir</button></a>
                         </ul>
@@ -39,5 +39,6 @@
     <p>Nombre: {{user.name}}</p>
     <p>Edad: {{user.age}}</p>
     <p>E-mail: {{user.email}}</p>
+    <p>Rol: {{user.role}}</p>
     <a href="/api/session/logout"><button>Salir</button></a>
 </div>

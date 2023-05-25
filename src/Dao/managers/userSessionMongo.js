@@ -15,13 +15,4 @@ export default class UserSessionMongo {
         await managerAccess.createRecord('USER CREATED');
         return result;
     }
-    async showAlert(user) {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: `Bienvenid@ ${user.firstName} ${user.lastName}`,
-            showConfirmButton: false,
-            timer: 1500
-        })
-    };
 }

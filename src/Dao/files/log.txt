@@ -166,3 +166,16 @@ Fecha: 23/5/2023 - Hora: 20:18:57 - Metodo: USER LOGIN
 Fecha: 23/5/2023 - Hora: 20:23:21 - Metodo: ADMIN LOGIN
 Fecha: 23/5/2023 - Hora: 20:23:55 - Metodo: ADMIN LOGIN
 Fecha: 23/5/2023 - Hora: 20:26:04 - Metodo: ADMIN LOGIN
+Fecha: 23/5/2023 - Hora: 20:30:56 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:34:02 - Metodo: ADMIN LOGIN
+Fecha: 23/5/2023 - Hora: 20:46:05 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:46:29 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:49:21 - Metodo: USER CREATED
+Fecha: 23/5/2023 - Hora: 20:49:31 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:52:15 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:54:09 - Metodo: USER LOGIN
+Fecha: 23/5/2023 - Hora: 20:54:42 - Metodo: ADMIN LOGIN
+Fecha: 23/5/2023 - Hora: 21:02:44 - Metodo: USER LOGIN
+Fecha: 24/5/2023 - Hora: 20:32:02 - Metodo: ADMIN LOGIN
+Fecha: 24/5/2023 - Hora: 20:36:27 - Metodo: ADMIN LOGIN
+Fecha: 24/5/2023 - Hora: 20:56:19 - Metodo: ADMIN LOGIN

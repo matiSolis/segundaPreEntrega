@@ -1,7 +1,7 @@
 <div>
         <nav class="navbar navbar-expand-lg bg-body-$green-900" style="width: 200%;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">EL EMPORIO DEL JARDIN</a>
+            <a class="navbar-brand" href="/">EL EMPORIO DEL JARDIN / BASE DE DATOS </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -11,21 +11,14 @@
                     <a class="nav-link active" aria-current="page" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/products">PRODUCTOS</a>
+                    <a class="nav-link">CREAR ADMIN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/carts/645bfaa4a2ea00536a2519d3">CARRITO</a>
+                    <a class="nav-link">BASE DE DATOS USUARIOS</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle bg-body-$green-900" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PERFIL</a>
-                        <ul class="dropdown-menu bg-body-$green-900">
-                            <p class="dropdown-item">NOMBRE:  {{user.name}}</p>
-                            <p class="dropdown-item">EMAIL:  {{user.email}}</p>
-                            <p class="dropdown-item">EDAD:  {{user.age}} </p>
-                            <p class="dropdown-item">tipo de usuario: {{user.role}}</p>
-                            <li><hr class="dropdown-divider"></li>
-                            <a href="/api/session/logout"><button>Salir</button></a>
-                        </ul>
+                <li>
+                    <p>{{user.role}}</p>
+                    <a href="/api/session/logout"><button>Salir</button></a>
                 </li>
             </ul>
             <form class="d-flex" role="search" action="/products" method="get">
@@ -35,7 +28,7 @@
             </div>
         </div>
     </nav>
-    <h1 class="title">CATALOGO</h1>
+    <button>AGREGAR PRODUCTO</button>
     {{#if message}}
         <div class="alert alert-warning">{{message}}</div>
     {{/if}}
@@ -48,7 +41,8 @@
                 <p>Category: {{this.category}}</p>
                 <p>Price: {{this.price}}</p>
                 <p>Stock: {{this.stock}}</p>
-                <button>Agregar al carrito</button>
+                <button>EDITAR PRODUCTO</button>
+                <button>ELIMINAR PRODUCTO</button>
             </div>
         {{/each}}
     </div>
