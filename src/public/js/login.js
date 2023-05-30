@@ -13,7 +13,11 @@ form.addEventListener('submit', e =>{
         }
     }).then(result=>{
         if(result.status == 200){
-            window.location.replace('/profile')
-        }
-    })
-})
+            return result.json();
+        } else {
+            throw new Error('Error de inicio de sesión');
+        };
+    }).then(data => {
+            window.location.replace('/profile');
+        });
+});

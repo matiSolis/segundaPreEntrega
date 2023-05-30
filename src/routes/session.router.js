@@ -1,64 +1,44 @@
 import { Router } from "express";
-import userModel from "../Dao/models/user.model.js";
 import ManagerAcces from "../Dao/managers/managerAccess.js";
-import UserSessionMongo from "../Dao/managers/userSessionMongo.js";
+import passport from "passport";
 
 const router = Router();
 const managerAccess = new ManagerAcces();
-const userSessionMongo = new UserSessionMongo();
-router.post('/register', async (req, res) => {
-    try {
-        const {firstName, lastName, age, email, password} = req.body;
-        if (!firstName || !lastName || !age || !email || !password) {
-            throw new Error("Faltan datos");
-        };
-        const userExist = await userModel.findOne({email});
-        if(userExist){
-            return res.status(400).send({status:"error", error:"User already exists."});
-        };
-        const user = {firstName, lastName, age, email, password};
-        const result = await userModel.create(user);
-        await managerAccess.createRecord('USER CREATED', user.firstName, user.lastName, user.email);
-        res.status(200).send({status:"succes", message:"User registered."});
-    }catch (err) {
-        res.status(500).send({ error: 'Error interno del servidor.'});
-    };
+
+router.post('/register', passport.authenticate('register', { failureRedirect:'/failregister'} ),async (req, res) =>{
+    res.send({status:"succes", message:"User registered"});
 });
-router.post('/login', async (req, res) => {
-    try{
-        let user;
-        const {email, password} = req.body;
-        if(email === 'adminCoder@coder.com' && password === 'adminCod3r123'){
-            user = {
-                firstName: 'Coder',
-                lastName: 'House',
-                email: email,
-                age: 18,
-                role: 'Admin'
-            };
-            await managerAccess.createRecord('ADMIN LOGIN'); 
-        }else{
-            user = await userModel.findOne({email, password});
-            await managerAccess.createRecord('USER LOGIN'); 
-        }
-        if(!user){ return res.status(404).send({status:"error", error:"Datos incorrectos."});}
-        const role = user.role === 'Admin' ? 'Admin' : 'Usuario';
-        req.session.user={
-            name: `${user.firstName} ${user.lastName}`,
-            age: user.age,
-            email: user.email,
-            role: role
-        };
-        res.status(200).send({status:"succes", payload:req.res.user, message:"Logueo de usuario exitoso."});
-    }catch (err){
-        res.status(500).send({ error: 'Error interno del servidor.'});
+router.get('/failregister', async (req,res)=>{
+    console.log('Fallo en el registro');
+    res.send({error: 'Error en el registro'})
+});
+router.post('/login', passport.authenticate('login', {failureRedirect:'/faillogin'}),async (req, res) => {
+    if(!req.user) return res.status(400).send({status:"error", error: 'Invalid credentials'});
+    req.session.user = {
+        firsName : req.user.firsName,
+        lastName: req.user.lastName,
+        age: req.user.age,
+        email: req.user.email
     };
+    await managerAccess.createRecord('USER LOGIN'); 
+    res.send({status:"succes", payload:req.res.user, message:"Logueo de usuario exitoso."});
+});
+router.get('/faillogin', async (req, res) => {
+    console.log('Fallo en el ingreso')
+    res.status(400).send({error:'Error en el ingreso.'})
 });
 router.get('/logout', (req,res)=>{
     req.session.destroy(err =>{
-        if(err) return res.status(500).send({status:"error", error:"No pudo cerrar sesion"})
+        if(err) return res.status(500).send({status:"error", error:"No pudo cerrar sesion"});
         res.redirect('/login');
     });
 });
+router.get('/github', passport.authenticate('github', {scope:['user:email']}), async (req, res)=>{
+
+});
+router.get('/githubcallback', passport.authenticate('github', {failureRedirect: '/login'}), async (req, res)=>{
+    req.session.user = req.user;
+    res.redirect('/');
+})
 
 export default router;

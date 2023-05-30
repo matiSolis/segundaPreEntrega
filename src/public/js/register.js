@@ -1,5 +1,4 @@
 const form = document.getElementById('registerForm');
-
 form.addEventListener('submit', e=>{
     e.preventDefault();
     const data = new FormData(form);
@@ -11,6 +10,5 @@ form.addEventListener('submit', e=>{
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(result=>result.json()).then(json =>console.log(json));
-    console.log(obj);
+    }).then(result=>result.json()).then(json =>console.log(json))
 });

@@ -1,41 +1,44 @@
-function irPanelControl() {
-    window.location.href = "/admin/panel-control";
-}
+//panel de control admin
+//no esta implementado
 
-function irDBUser() {
-    window.location.href = "/admin/db-user";
-    fetch('/admin/db-user')
-    .then(response => response.json())
-    .then(data => {
-    console.log(data);
-    })
-    .catch(error => {
-    console.error(error);
-    });
-}
+// function irPanelControl() {
+//     window.location.href = "/admin/panel-control";
+// }
 
-function irRendimientos() {
-    window.location.href = "/admin/rendimientos";
-}
+// function irDBUser() {
+//     window.location.href = "/admin/db-user";
+//     fetch('/admin/db-user')
+//     .then(response => response.json())
+//     .then(data => {
+//     console.log(data);
+//     })
+//     .catch(error => {
+//     console.error(error);
+//     });
+// }
 
-function irAgregarProductos() {
-    window.location.href = "/admin/agregar-productos";
-}
+// function irRendimientos() {
+//     window.location.href = "/admin/rendimientos";
+// }
 
-function volver() {
-    window.history.back();
-}
+// function irAgregarProductos() {
+//     window.location.href = "/admin/agregar-productos";
+// }
 
-function eliminarUsuario(userId) {
-    fetch(`/admin/db-user/${userId}`, { method: 'DELETE' })
-    .then(response => {
-        if (response.ok) {
-        window.location.reload();
-        } else {
-        console.error('Error al eliminar el usuario');
-        }
-    })
-    .catch(error => {
-        console.error('Error al eliminar el usuario', error);
-    });
-}
+// function volver() {
+//     window.history.back();
+// }
+
+// function eliminarUsuario(userId) {
+//     fetch(`/admin/db-user/${userId}`, { method: 'DELETE' })
+//     .then(response => {
+//         if (response.ok) {
+//         window.location.reload();
+//         } else {
+//         console.error('Error al eliminar el usuario');
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error al eliminar el usuario', error);
+//     });
+// }

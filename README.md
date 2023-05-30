@@ -11,6 +11,7 @@ Bitacora::
 
     {Resuelto el error, en las keys del schema de messages a user le habia puesto la key "unique: true", cuando ponia dos usuarios
     con el mismo valor me tiraba un error por consola que me cortaba la ejecucion por consola}
+    {saque todo el chat del codigo pq no lo usaba mas}
 
 
 

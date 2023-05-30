@@ -1,9 +1,7 @@
 import userModel from "../models/user.model.js"
 import ManagerAcces from "./managerAccess.js"
-import Swal from "sweetalert2";
 
 const managerAccess = new ManagerAcces();
-
 export default class UserSessionMongo {
     async addUser(userData){
         const {firstName, lastName, email, password} = userData;

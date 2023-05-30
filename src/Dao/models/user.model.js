@@ -7,10 +7,7 @@ const schema = new mongoose.Schema({
     lastName:String,
     age: Number,
     email:String,
-    password:String,
-    role:String
-})
-
+    password:String
+});
 const userModel = mongoose.model(collection, schema);
-
 export default userModel;

@@ -3,7 +3,6 @@ import productModel from "../models/products.model.js";
 import ManagerAcces from "./managerAccess.js"
 
 const managerAccess = new ManagerAcces();
-
 export default class CartManagerMongo {
     async getDetailsInCart (idCart) {
         const cart = await cartModel.findById(idCart).populate('products.product');
