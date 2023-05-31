@@ -13,7 +13,11 @@ Bitacora::
     con el mismo valor me tiraba un error por consola que me cortaba la ejecucion por consola}
     {saque todo el chat del codigo pq no lo usaba mas}
 
+/- cart.router.js :
+    {falta el delete de producto por ID dentro de un ID carrito}
 
+/- Revisar views profile:
+    {No me trae el nombre de usuario dentro del perfil, probe de todo y no lo puedo traer.}
 
 
 
