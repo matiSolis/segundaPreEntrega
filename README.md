@@ -14,9 +14,11 @@ Bitacora::
     {saque todo el chat del codigo pq no lo usaba mas}
 
 /- cart.router.js :
+
     {falta el delete de producto por ID dentro de un ID carrito}
 
 /- Revisar views profile:
+
     {No me trae el nombre de usuario dentro del perfil, probe de todo y no lo puedo traer.}
 
 
